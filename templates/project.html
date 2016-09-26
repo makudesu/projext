@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Projects {% endblock %}
+{% block content %}
+	<h1>Project: {{project.title}} </h1> 
+	{% for row in task %}
+		{% if row['status'] is none %}
+			<p>[ ] Task: {{row['title']}}</p>
+		{% else %}
+			<p>[X] Task: {{row['title']}}</p>
+		{% endif %}
+	{% endfor %}
+{% endblock content %}
